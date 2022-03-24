@@ -1,0 +1,4 @@
+// Source : https://css-tricks.com/snippets/sass/px-to-em-function/
+@function rem($pixels, $context) {
+  @return ($pixels / $context) * 1rem;
+}
