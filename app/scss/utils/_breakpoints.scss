@@ -1,7 +1,10 @@
-// 640px, 1024px, 1400px
-$breakpoints-up: ( 'medium': '40em', 'large': '64em', 'xlarge': '87.5em', );
-// 639px, 1023px, 1399px
-$breakpoints-down: ( 'medium': '39.9375em', 'large': '63.9375em', 'xlarge': '87.4375em', );
+/* 640px, 1111px, 1400px */
+
+$breakpoints-up: ( 'medium': '40em', 'large': '71.875em', 'xlarge': '87.5em', );
+
+/* 639px, 1109px, 1399px */
+
+$breakpoints-down: ( 'medium': '39.9375em', 'large': '71.8125em', 'xlarge': '87.4375em', );
 
 /* Mixin Breakpoints */
 
