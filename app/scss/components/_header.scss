@@ -3,17 +3,25 @@
 /* Header */
 
 .header {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: rem(36);
-  @include breakpoint(large) {
-    display: flex;
+  @include breakpoint(medium) {
     justify-content: space-between;
     align-items: center;
   }
-  &__title {}
+  &__title {
+    width: 100%;
+    @include breakpoint(medium) {
+      width: auto;
+    }
+  }
   &__subtitle {
     font-size: rem(14);
     font-weight: 700;
     color: var(--dark-text1);
   }
-  &__toggle {}
+  &__toggle {
+    margin-left: auto;
+  }
 }
