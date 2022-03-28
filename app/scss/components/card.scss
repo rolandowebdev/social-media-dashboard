@@ -2,22 +2,53 @@
 
 /* Card */
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(30);
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint(large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .card {
   background-color: var(--dark-card);
   color: var(--dark-text1);
-  width: rem(255); // TEMPORARY
   padding: rem(25);
   border-radius: rem(5);
   text-align: center;
-  &--facebook {}
-  &--twitter {}
-  &--instagram {}
-  &--youtube {}
+  overflow: hidden;
+  &--facebook {
+    border-top: rem(5) solid var(--facebook);
+  }
+  &--twitter {
+    border-top: rem(5) solid var(--twitter);
+  }
+  &--instagram {
+    padding-top: rem(30);
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: rem(5);
+      width: 100%;
+      background: linear-gradient( 225deg, var(--instagram-start) 0%, var(--instagram-middle) 50.91%, var(--instagram-end) 100%);
+    }
+  }
+  &--youtube {
+    border-top: rem(5) solid var(--youtube);
+  }
   &__platform {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: rem(8);
+    height: rem(20);
     margin-bottom: rem(28);
   }
   &__icon {
@@ -42,7 +73,9 @@
     &--big {
       font-size: rem(56);
     }
-    &--small {}
+    &--small {
+      font-size: rem(32);
+    }
   }
   &__label {
     font-size: rem(12);
