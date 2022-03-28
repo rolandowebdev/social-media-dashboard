@@ -15,12 +15,18 @@
 }
 
 .card {
-  background-color: var(--dark-card);
+  position: relative;
   color: var(--dark-text1);
   padding: rem(25);
+  background-color: var(--dark-card);
   border-radius: rem(5);
   text-align: center;
   overflow: hidden;
+  cursor: pointer;
+  transition: background 150ms ease-in-out;
+  &:hover {
+    background: var(--dark-card-hover);
+  }
   &--facebook {
     border-top: rem(5) solid var(--facebook);
   }
@@ -94,7 +100,7 @@
       color: var(--limegreen);
     }
     &--down {
-      color: var(--bright-red);
+      color: var(--brightred);
     }
   }
   &__number {

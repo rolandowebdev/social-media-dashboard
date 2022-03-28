@@ -1,18 +1,25 @@
+@use '../utils' as *;
+
+/* Card Grid */
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
   justify-items: start;
-  .card__subtitle {}
+  gap: rem(23);
+  .card__subtitle {
+    font-size: rem(14);
+  }
   .card__count {
     margin-bottom: 0;
   }
   .card__count,
   .card__change {
-    align-self: flex-end;
+    align-self: end;
   }
   img,
   .card__change {
-    justify-self: flex-end;
+    justify-self: end;
   }
 }
