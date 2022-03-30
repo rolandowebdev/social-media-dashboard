@@ -6,6 +6,7 @@
   margin: 0;
   label {
     font-size: rem(14);
+    font-weight: 700;
     &[for='dark'] {
       line-height: rem(24);
       margin-right: rem(13);
@@ -32,7 +33,7 @@
     width: 100%;
     border-radius: rem(12);
     pointer-events: none;
-    background: linear-gradient( 225deg, var(--toggle-bg-end) 0%, var(--toggle-bg-start) 98.02%);
+    background: var(--toggle);
   }
   &__button {
     position: absolute;
@@ -43,16 +44,11 @@
     width: rem(18);
     transform: translateY(-50%);
     border-radius: 50%;
-    background-color: var(--dark-bg);
+    background-color: var(--toggle-btn);
     transition: all 150ms ease-in-out;
   }
   #light:checked~.toggle__button {
     left: calc(100% - 21px);
     right: 3px;
-  }
-  #system:checked~.toggle__button {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }
