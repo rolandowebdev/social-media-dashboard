@@ -13,11 +13,27 @@ const setColorMode = () => {
     } else {}
 };
 
-const checkIsLight = () => {
-    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-        ligthBtn.click();
+const checkMode = () => {
+    if (localStorage.getItem('colorMode') == null) {
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            ligthBtn.click();
+            localStorage.setItem('colorMode', 'light');
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            darkBtn.click();
+            localStorage.setItem('colorMode', 'dark');
+        } else if (!window.matchMedia) {
+            return false;
+        }
     }
 };
+
+// const checkModeChange = () => {
+//     window
+//         .matchMedia('(prefers-color-scheme: dark)')
+//         .addEventListener('change', (e) => {
+//             checkMode();
+//         });
+// };
 
 const setDarkMode = () => {
     document.querySelector('body').classList = 'dark';
@@ -28,7 +44,8 @@ const setLightMode = () => {
 };
 
 setColorMode();
-checkIsLight();
+checkMode();
+// checkModeChange();
 
 radioButton.forEach(function(radio) {
     radio.addEventListener('click', () => {
