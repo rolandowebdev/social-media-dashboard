@@ -16,3 +16,5 @@
 
 node_modules/
 dist/style.css.map
+style-guide.md
+README-template.md
